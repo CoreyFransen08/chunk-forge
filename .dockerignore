@@ -1,0 +1,50 @@
+# Dependencies
+node_modules
+parser/venv
+parser/__pycache__
+parser/*.pyc
+
+# Build output
+dist
+
+# Development files
+.git
+.gitignore
+*.md
+!README.md
+
+# IDE/Editor
+.idea
+.vscode
+*.swp
+*.swo
+.DS_Store
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Testing
+coverage
+*.test.ts
+*.spec.ts
+
+# Cache directories
+.cache
+cache
+parser/cache
+
+# Storage (created at runtime)
+storage
+
+# Logs
+*.log
+logs
+
+# Docker files (not needed in image)
+docker-compose*.yml
+Dockerfile*
+
+# Parser (built separately)
+parser

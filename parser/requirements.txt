@@ -1,0 +1,26 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pydantic>=2.7.4,<3.0.0
+python-dotenv>=1.0.0
+
+# PDF Processing - LlamaParse
+llama-cloud-services == 0.6.83
+llama-parse == 0.6.83
+PyPDF2==3.0.1
+
+# Document Processing - MarkItDown (PDF, Word, Excel, CSV)
+markitdown[all]>=0.1.0
+
+# Document Processing - Docling (PDF, Word, PowerPoint, Excel, HTML, Images)
+# Install headless OpenCV BEFORE docling to avoid libGL dependency issues in server environments
+opencv-python-headless
+docling
+
+
+# Tokenization
+tiktoken>=0.7.0
+
+# NLP Utilities
+nltk>=3.9
+sentence-transformers>=3.0.0
