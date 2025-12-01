@@ -23,7 +23,8 @@ cd chunk-forge
 
 # Copy environment file and configure
 cp .env.example .env
-# Edit .env with your API keys (optional)
+
+# Edit .env with your API keys
 
 # Start all services
 docker-compose up -d
