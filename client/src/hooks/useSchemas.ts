@@ -5,11 +5,26 @@ import type { MetadataSchema, CreateSchemaRequest, UpdateSchemaRequest } from "@
 const SCHEMA_STALE_TIME = 30 * 60 * 1000; // 30 minutes
 
 /**
- * Fetch all schemas
+ * Fetch all schemas for the current user
  */
-export function useSchemas() {
+export function useSchemas(options?: { includePublic?: boolean }) {
+  const includePublic = options?.includePublic ?? false;
+  const queryKey = includePublic
+    ? ["/api/schemas", "?includePublic=true"]
+    : ["/api/schemas"];
+
   return useQuery<MetadataSchema[]>({
-    queryKey: ["/api/schemas"],
+    queryKey,
+    staleTime: SCHEMA_STALE_TIME,
+  });
+}
+
+/**
+ * Fetch public schemas only
+ */
+export function usePublicSchemas() {
+  return useQuery<MetadataSchema[]>({
+    queryKey: ["/api/schemas/public"],
     staleTime: SCHEMA_STALE_TIME,
   });
 }

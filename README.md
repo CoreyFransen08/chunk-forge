@@ -23,8 +23,7 @@ cd chunk-forge
 
 # Copy environment file and configure
 cp .env.example .env
-
-# Edit .env with your API keys
+# Edit .env with your API keys (optional)
 
 # Start all services
 docker-compose up -d
@@ -232,4 +231,4 @@ npm run db:push  # Push schema to database
 
 ## License
 
-Apache 2.0
+MIT

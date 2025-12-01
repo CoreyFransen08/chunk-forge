@@ -56,3 +56,5 @@ parser/cache/
 *.tmp
 *.temp
 
+package-lock.json
+

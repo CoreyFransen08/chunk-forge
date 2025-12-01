@@ -3,7 +3,7 @@ import path from 'path';
 
 /**
  * Local filesystem storage service for ChunkForge Open Source
- 
+ * Replaces Supabase Storage with local file system operations
  */
 
 // Storage base directory - can be configured via environment variable

@@ -1,10 +1,6 @@
-import { config } from 'dotenv';
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic, log } from "./static";
-
-// Load environment variables from .env.local (priority) and .env (fallback)
-config({ path: ['.env.local', '.env'] });
 
 const app = express();
 app.use(express.json());
