@@ -4,13 +4,41 @@ A self-hosted document processing platform for converting PDFs to Markdown with 
 
 ## Features
 
-- **PDF to Markdown Conversion**: Upload PDFs and convert them to Markdown using LlamaParse, MarkItDown, or Docling
-- **Semantic Chunking**: Multiple strategies (recursive, paragraph, heading, semantic, sentence, token, hierarchical)
-- **Drag-and-Drop Editor**: Visual chunk manipulation with reordering, merging, and splitting
-- **Rich Metadata**: Add title, author, tags, keywords, summaries, and custom fields to each chunk
-- **Custom Schemas**: Define your own metadata schemas for documents and chunks
-- **AI Enrichment**: Optionally use AI (OpenAI) to automatically populate metadata fields
-- **Multi-Format Export**: Export as JSON, JSONL, CSV, or Markdown with configurable overlap
+![Full Editor View](screenshots/full_editor_view.png)
+
+### PDF to Markdown Conversion
+Upload PDFs and convert them to Markdown using LlamaParse, MarkItDown, or Docling.
+
+### Semantic Chunking
+Multiple strategies (recursive, paragraph, heading, semantic, sentence, token, hierarchical) with configurable chunk sizes.
+
+![Chunking Strategy](screenshots/chunking_strategy.png)
+
+### Drag-and-Drop Editor
+Visual chunk manipulation with reordering, merging, and splitting. Switch between Card View and Overlay View.
+
+<p align="center">
+  <img src="screenshots/card_view.png" alt="Card View" width="48%">
+  <img src="screenshots/overlay_view.png" alt="Overlay View" width="48%">
+</p>
+
+### Rich Metadata
+Add tags, keywords, summaries, and custom fields to each chunk with full editing support.
+
+![Chunk Metadata](screenshots/chunk_metadata.png)
+
+### Custom Schemas
+Define your own metadata schemas for documents and chunks with support for multiple field types.
+
+![Schema Editor](screenshots/schema_editor.png)
+
+### AI Enrichment
+Optionally use AI (OpenAI) to automatically populate metadata fields for documents and chunks.
+
+![Document Metadata with AI](screenshots/document_metadata.png)
+
+### Multi-Format Export
+Export as JSON, JSONL, CSV, or Markdown with configurable overlap for vector database ingestion.
 
 ## Quick Start with Docker
 
@@ -30,6 +58,23 @@ docker-compose up -d
 
 # Access the application
 open http://localhost:5001
+```
+
+### Rebuilding Without Cache
+
+To force a fresh build without using cached layers:
+
+```bash
+# Rebuild all services without cache, then start
+docker-compose build --no-cache
+docker-compose up -d
+
+# Or rebuild and start in one command (rebuilds but uses cache)
+docker-compose up --build -d
+
+# To rebuild a specific service without cache
+docker-compose build --no-cache parser
+docker-compose build --no-cache app
 ```
 
 ## Architecture
@@ -231,4 +276,4 @@ npm run db:push  # Push schema to database
 
 ## License
 
-MIT
+Apache 2.0

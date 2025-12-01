@@ -19,7 +19,6 @@ interface ChunkOverlayProps {
   colorIndex: number;
   isSelected: boolean;
   isHovered: boolean;
-  showOverlapHighlight: boolean;
   onSelect: () => void;
   onDelete: () => void;
   onResizeStart: (edge: 'top' | 'bottom') => void;
@@ -33,7 +32,6 @@ export function ChunkOverlay({
   colorIndex,
   isSelected,
   isHovered,
-  showOverlapHighlight,
   onSelect,
   onDelete,
   onResizeStart,
@@ -43,19 +41,14 @@ export function ChunkOverlay({
   if (!rect) return null;
 
   // Determine colors based on state
-  const showOverlap = showOverlapHighlight && chunk.hasOverlap;
   const baseColor = CHUNK_COLORS[colorIndex % CHUNK_COLORS.length];
 
   const backgroundColor = isSelected
     ? 'rgba(59, 130, 246, 0.25)' // blue for selected
-    : showOverlap
-    ? 'rgba(239, 68, 68, 0.2)' // red for overlaps
     : baseColor.bg;
 
   const borderColor = isSelected
     ? '#3b82f6' // blue
-    : showOverlap
-    ? '#ef4444' // red
     : baseColor.border;
 
   // Calculate z-index: selected chunks on top, otherwise based on chunk order

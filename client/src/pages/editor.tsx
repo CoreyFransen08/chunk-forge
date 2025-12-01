@@ -68,7 +68,6 @@ export default function Editor() {
 
   // View mode state (card vs overlay)
   const [viewMode, setViewMode] = useState<'card' | 'overlay'>('card');
-  const [showOverlaps, setShowOverlaps] = useState(false);
 
   // Check if all chunks support overlay mode
   const supportsOverlay = useMemo(
@@ -547,16 +546,6 @@ export default function Editor() {
                     onModeChange={setViewMode}
                     disabled={!supportsOverlay}
                   />
-                  {viewMode === 'overlay' && (
-                    <div className="flex items-center gap-2">
-                      <Label htmlFor="show-overlaps" className="text-sm">Highlight Overlaps</Label>
-                      <Switch
-                        id="show-overlaps"
-                        checked={showOverlaps}
-                        onCheckedChange={setShowOverlaps}
-                      />
-                    </div>
-                  )}
                 </div>
 
                 {/* Conditional rendering based on view mode */}
@@ -588,7 +577,6 @@ export default function Editor() {
                     markdown={upload?.markdown || ''}
                     chunks={chunks}
                     selectedChunkId={selectedChunkId}
-                    showOverlaps={showOverlaps}
                     onChunkSelect={setSelectedChunkId}
                     onChunkDelete={handleDeleteChunk}
                     onChunkUpdate={handleChunkUpdate}

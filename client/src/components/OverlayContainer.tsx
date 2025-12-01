@@ -10,7 +10,6 @@ interface OverlayContainerProps {
   markdown: string;
   chunks: Chunk[];
   selectedChunkId: string | null;
-  showOverlaps: boolean;
   onChunkSelect: (chunkId: string) => void;
   onChunkDelete: (chunkId: string) => void;
   onChunkUpdate: (chunk: Chunk) => void;
@@ -21,7 +20,6 @@ export function OverlayContainer({
   markdown,
   chunks,
   selectedChunkId,
-  showOverlaps,
   onChunkSelect,
   onChunkDelete,
   onChunkUpdate,
@@ -96,7 +94,6 @@ export function OverlayContainer({
             colorIndex={index}
             isSelected={selectedChunkId === chunk.id}
             isHovered={hoveredChunkId === chunk.id}
-            showOverlapHighlight={showOverlaps}
             onSelect={() => onChunkSelect(chunk.id)}
             onDelete={() => onChunkDelete(chunk.id)}
             onResizeStart={(edge) => handleResizeStart(chunk.id, edge)}

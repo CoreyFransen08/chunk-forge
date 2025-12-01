@@ -2,3 +2,4 @@
 
 - When chunking large documents the chunker will fail due to payload size
 
+- Need to add back in chunk splitting feature (should allow for splitting chunks (parent/children), but copying metadata from parent chunk)
