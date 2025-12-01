@@ -231,4 +231,4 @@ npm run db:push  # Push schema to database
 
 ## License
 
-MIT
+Apache 2.0
