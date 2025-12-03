@@ -2,6 +2,8 @@
 
 A self-hosted document processing platform for converting PDFs to Markdown with semantic chunking, drag-and-drop editing, rich metadata management, and multi-format export.
 
+> **Looking for a hosted solution?** Check out [ChunkForge](https://chunkforge.com) - free to start using, no credit card required, with access to all features.
+
 ## Features
 
 ![Full Editor View](screenshots/full_editor_view.png)
